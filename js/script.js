@@ -42,10 +42,16 @@ window.addEventListener('DOMContentLoaded', function (argument) {
 	let deadline = '2018-08-22';
 
 	function getTimeRemaining (endtime) {
-		let t = Date.parse(endtime) - Date.parse(new Date()),
-			seconds = Math.floor( (t/1000) % 60),
-			minutes = Math.floor( (t/1000/60) % 60 ),
-			hours = Math.floor( (t/(1000*60*60)) );
+		let t = Date.parse(endtime) - Date.parse(new Date());
+			if (t > 0){
+						seconds = Math.floor( (t/1000) % 60),
+						minutes = Math.floor( (t/1000/60) % 60 ),
+						hours = Math.floor( (t/(1000*60*60)) );
+			} else {
+				seconds = '00',
+				minutes = '00',
+				hours = '00';
+			}
 
 			return {
 				'total': t,
@@ -65,9 +71,21 @@ window.addEventListener('DOMContentLoaded', function (argument) {
 			function updateClock () {
 				 let t = getTimeRemaining(endtime) ;
 
-				 hours.innerHTML = t.hours;
-				 minutes.innerHTML = t.minutes;
-				 seconds.innerHTML = t.seconds;
+				 if (t.hours < 10) {	
+				 	hours.innerHTML = '0' + t.hours;
+				 } else {
+				 	hours.innerHTML = t.hours;
+				 }
+				 if (t.minutes < 10) {
+				 	minutes.innerHTML = '0' + t.minutes;
+				 } else {
+				 	minutes.innerHTML = t.minutes;
+				 }
+				 if (t.seconds < 10) {
+				 	seconds.innerHTML = '0' + t.seconds;
+				 } else {
+				 	seconds.innerHTML = t.seconds;
+				 }
 			
 				 if (t.total <= 0) {
 				 	clearInterval(timeInterval);
