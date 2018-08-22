@@ -39,7 +39,7 @@ window.addEventListener('DOMContentLoaded', function (argument) {
 
 // Таймер 
 
-	let deadline = '2018-08-22';
+	let deadline = '2018-03-23';
 
 	function getTimeRemaining (endtime) {
 		let t = Date.parse(endtime) - Date.parse(new Date());
@@ -48,9 +48,9 @@ window.addEventListener('DOMContentLoaded', function (argument) {
 						minutes = Math.floor( (t/1000/60) % 60 ),
 						hours = Math.floor( (t/(1000*60*60)) );
 			} else {
-				seconds = '00',
-				minutes = '00',
-				hours = '00';
+				seconds = '0',
+				minutes = '0',
+				hours = '0';
 			}
 
 			return {
@@ -87,9 +87,9 @@ window.addEventListener('DOMContentLoaded', function (argument) {
 				 	seconds.innerHTML = t.seconds;
 				 }
 			
-				 if (t.total <= 0) {
+				 /*if (t.total <= 0) {
 				 	clearInterval(timeInterval);
-				 }
+				 }*/
 			};
 
 			updateClock();
@@ -99,4 +99,27 @@ window.addEventListener('DOMContentLoaded', function (argument) {
 
 	setClock('timer', deadline);
 
+// Модальное окно
+	
+	let more = document.querySelector('.more'),
+		overlay = document.querySelector('.overlay'),
+		close = document.querySelector('.popup-close');
+
+		more.addEventListener('click', function(){
+			this.classList.add('more-splash');
+			overlay.style.display = 'block';
+			document.body.style.overflow = 'hidden';
+		});
+
+		close.addEventListener('click', function() {
+			overlay.style.display = 'none';
+			more.classList.remove('more-splash');
+			document.body.style.overflow = '';
+		});
+
+
+
+
+
 });
+
