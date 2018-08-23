@@ -10,9 +10,10 @@ class Options {
 	
 	create () {
 		let div = document.createElement('div'),
+		str = 'Это новый элемент',
 			body = document.getElementsByTagName('body')[0];
 
-		div.textContent = 'Это новый элемент';
+		div.innerHTML = str;
 		div.style.cssText = `height: ${this.height}px;\
 							 width: ${this.width}px;\
 							 background: ${this.bg};\
@@ -24,5 +25,5 @@ class Options {
 
 let newObj = new Options(100, 400, 'blue', 30, 'center');
 
-document.write(newObj.create());
+newObj.create();
 
