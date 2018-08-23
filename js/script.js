@@ -87,9 +87,7 @@ window.addEventListener('DOMContentLoaded', function (argument) {
 				 	seconds.innerHTML = t.seconds;
 				 }
 			
-				 /*if (t.total <= 0) {
-				 	clearInterval(timeInterval);
-				 }*/
+				
 			};
 
 			updateClock();
