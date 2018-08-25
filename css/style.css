@@ -737,3 +737,9 @@ header ul li:before {
   .status {
   color: #dbf557;
 }
+
+.plane {
+  background-image: url("../img/air-freight.png");
+  background-repeat: no-repeat;
+
+}

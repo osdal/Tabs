@@ -136,7 +136,7 @@ message.failure = "Что-то пошло не так...";
 let form = document.getElementsByClassName('main-form')[0];
 	input = form.getElementsByTagName('input'),
 	statusMessage = document.createElement('div');
-	statusMessage.classList.add('status');
+	statusMessage.classList.add('plane');
 
 	form.addEventListener('submit', function (event) {
 		event.preventDefault();
@@ -156,7 +156,8 @@ let form = document.getElementsByClassName('main-form')[0];
 				statusMessage.innerHTML = message.loading;
 			} else if (request.readyState == 4){
 				if (request.status == 200 && request.status < 300) {
-					statusMessage.innerHTML = message.success;
+					form.appendChild(statusMessage);
+					// statusMessage.innerHTML = message.success;
 					// Добавляем контент на страницу
 				} else {
 					statusMessage.innerHTML = message.failure;
