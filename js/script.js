@@ -210,6 +210,36 @@ let contact_form = document.querySelector('.contact-form form');
 		}
 	});
 
+	// Слайдер
+
+	let slideIndex = 1,
+		slides = document.getElementsByClassName('slider-item'),
+		prev = document.querySelector('.prev'),
+		next = document.querySelector('.next'),
+		dotsWrap = document.querySelector('.slider-dots');
+
+		showSlides(slideIndex);
+
+		function showSlides (n) {
+			if (n > slides.length) {
+				slideIndex = 1;
+			};
+			if (n < 1) {
+				slideIndex = slides.length;
+			};
+
+			for (let i = 0; i < dots.length; i ++) {
+				dots[i].classList.remove('dot-active');
+			};
+
+			slides[slideIndex - 1].style.display = 'block';
+			dots[slideIndex - 1].classList.add('dot-active');
+		}
+
+		function plusSlides (n) {
+			
+		}
+
 
  
 
