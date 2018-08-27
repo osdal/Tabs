@@ -156,6 +156,8 @@ let form = document.getElementsByClassName('main-form')[0];
 				statusMessage.innerHTML = message.loading;
 			} else if (request.readyState == 4){
 				if (request.status == 200 && request.status < 300) {
+					statusMessage.innerHTML = '';
+					statusMessage.style.height = '100px';
 					form.appendChild(statusMessage);
 					// statusMessage.innerHTML = message.success;
 					// Добавляем контент на страницу
