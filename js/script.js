@@ -237,7 +237,7 @@ let contact_form = document.querySelector('.contact-form form');
 		}
 
 		function plusSlides (n) {
-			
+			showSlides(slideIndex) += n;
 		}
 
 
