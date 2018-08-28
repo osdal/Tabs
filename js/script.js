@@ -287,6 +287,11 @@ let contact_form = document.querySelector('.contact-form form');
 				}
 			});
 
+			persons.oninput = function (input) {
+				return this.value = this.value.replace(/[^\d]/g, '');
+			}
+
+
 			restDays.addEventListener('change', function() {
 				daysSum = +this.value;
 				total = (daysSum + personsSum) * 4000;
