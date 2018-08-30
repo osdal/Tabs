@@ -1,13 +1,13 @@
 window.addEventListener('DOMContentLoaded', function (argument) {
 
-let tab = require('../js/parts/tab.js');
-let modal = require('../js/parts/modal.js');
-let ajax = require('../js/parts/ajax.js');
-let slider = require('../js/parts/slider.js');
-let calc = require('../js/parts/calc.js');
-let timer = require('../js/parts/timer.js');
+let tab = require('../parts/tab.js');
+let modal = require('../parts/modal.js');
+let ajax = require('../parts/');
+let slider = require('../parts/slider.js');
+let calc = require('../parts/calc.js');
+let timer = require('../parts/timer.js');
 
-tab();
+tab();	
 modal();
 ajax();
 slider();
