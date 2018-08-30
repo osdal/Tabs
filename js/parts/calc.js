@@ -9,6 +9,8 @@
 
 			totalValue.innerHTML = 0;
 
+
+
 			persons.addEventListener('change', function () {
 				personsSum = +this.value;
 				total = (daysSum + personsSum) * 4000;
@@ -20,7 +22,7 @@
 			});
 
 			persons.oninput = function (input) {
-				return this.value = this.value.replace(/[^\d]/g, '');
+				return this.value = this.value.match(/^\d+$/);
 			}
 
 
@@ -33,6 +35,10 @@
 					totalValue.innerHTML = total;
 				}
 			});
+
+			restDays.oninput = function (input) {
+				return this.value = this.value.match(/^\d+$/);
+			}
 
 			place.addEventListener('change', function() {
 				if (restDays.value == '' || persons.value == '') {

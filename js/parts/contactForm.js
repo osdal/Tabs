@@ -1,5 +1,12 @@
 ﻿function contactForm () {
-	let contact_form = document.querySelector('.contact-form form');
+
+	let message = new Object();
+
+	message.loading = 'Загрузка...';
+	message.success = "Спасибо! Скоро мы с вами свяжемся";
+	message.failure = "Что-то пошло не так...";
+
+	let contact_form = document.querySelector('.contact-form form'),
 	contact_form_input = contact_form.getElementsByTagName('input'),
 	contact_form_statusMessage = document.createElement('div');
 	contact_form_statusMessage.classList.add('status');
