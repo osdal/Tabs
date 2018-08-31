@@ -28,6 +28,13 @@ contactForm();
 
 },{"../parts/ajax.js":2,"../parts/calc.js":3,"../parts/contactForm.js":4,"../parts/form.js":5,"../parts/modal.js":6,"../parts/slider.js":7,"../parts/tab.js":8,"../parts/timer.js":9}],2:[function(require,module,exports){
 function ajax() {
+
+	let message = new Object();
+
+	message.loading = 'Загрузка...';
+	message.success = "Спасибо! Скоро мы с вами свяжемся";
+	message.failure = "Что-то пошло не так...";
+	
 	let request = new XMLHttpRequest();
 		request.open('POST', 'server.php', true);
  		request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
@@ -72,10 +79,16 @@ function calc () {
 
 			persons.addEventListener('change', function () {
 				personsSum = +this.value;
-				total = (daysSum + personsSum) * 4000;
+				if(personsSum == '') {
+					totalValue.innerHTML = 0;
+					total = 0;
+				} else {
+					total = (daysSum + personsSum) * 4000;
+						}
 				if (restDays.value == '') {
 					totalValue.innerHTML = 0;
-				} else {
+					total = 0;
+				} else if (personsSum != '' && restDays.value != ''){
 					totalValue.innerHTML = total;
 				}
 			});
@@ -87,10 +100,16 @@ function calc () {
 
 			restDays.addEventListener('change', function() {
 				daysSum = +this.value;
-				total = (daysSum + personsSum) * 4000;
+				if(daysSum == '') {
+					totalValue.innerHTML = 0;
+					total = 0;
+				} else {
+					total = (daysSum + personsSum) * 4000;
+				}
 				if (persons.value == '') {
 					totalValue.innerHTML = 0;
-				} else {
+					total = 0;
+				} else if (persons.value != '' && daysSum != '') {
 					totalValue.innerHTML = total;
 				}
 			});

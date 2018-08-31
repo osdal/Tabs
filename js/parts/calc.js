@@ -13,10 +13,16 @@
 
 			persons.addEventListener('change', function () {
 				personsSum = +this.value;
-				total = (daysSum + personsSum) * 4000;
+				if(personsSum == '') {
+					totalValue.innerHTML = 0;
+					total = 0;
+				} else {
+					total = (daysSum + personsSum) * 4000;
+						}
 				if (restDays.value == '') {
 					totalValue.innerHTML = 0;
-				} else {
+					total = 0;
+				} else if (personsSum != '' && restDays.value != ''){
 					totalValue.innerHTML = total;
 				}
 			});
@@ -28,10 +34,16 @@
 
 			restDays.addEventListener('change', function() {
 				daysSum = +this.value;
-				total = (daysSum + personsSum) * 4000;
+				if(daysSum == '') {
+					totalValue.innerHTML = 0;
+					total = 0;
+				} else {
+					total = (daysSum + personsSum) * 4000;
+				}
 				if (persons.value == '') {
 					totalValue.innerHTML = 0;
-				} else {
+					total = 0;
+				} else if (persons.value != '' && daysSum != '') {
 					totalValue.innerHTML = total;
 				}
 			});

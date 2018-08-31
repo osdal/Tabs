@@ -1,4 +1,11 @@
 ﻿function ajax() {
+
+	let message = new Object();
+
+	message.loading = 'Загрузка...';
+	message.success = "Спасибо! Скоро мы с вами свяжемся";
+	message.failure = "Что-то пошло не так...";
+	
 	let request = new XMLHttpRequest();
 		request.open('POST', 'server.php', true);
  		request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
