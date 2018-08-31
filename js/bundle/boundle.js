@@ -83,7 +83,7 @@ function calc () {
 					totalValue.innerHTML = 0;
 					total = 0;
 				} else {
-					total = (daysSum + personsSum) * 4000;
+					total = daysSum * personsSum * 4000;
 						}
 				if (restDays.value == '') {
 					totalValue.innerHTML = 0;
@@ -104,7 +104,7 @@ function calc () {
 					totalValue.innerHTML = 0;
 					total = 0;
 				} else {
-					total = (daysSum + personsSum) * 4000;
+					total = daysSum * personsSum * 4000;
 				}
 				if (persons.value == '') {
 					totalValue.innerHTML = 0;
