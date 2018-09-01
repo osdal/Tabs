@@ -83,7 +83,7 @@ function calc () {
 					totalValue.innerHTML = 0;
 					total = 0;
 				} else {
-					total = daysSum * personsSum * 4000;
+					total = (daysSum + personsSum) * 4000;
 						}
 				if (restDays.value == '') {
 					totalValue.innerHTML = 0;
@@ -104,7 +104,7 @@ function calc () {
 					totalValue.innerHTML = 0;
 					total = 0;
 				} else {
-					total = daysSum * personsSum * 4000;
+					total = (daysSum + personsSum) * 4000;
 				}
 				if (persons.value == '') {
 					totalValue.innerHTML = 0;
@@ -186,8 +186,9 @@ message.failure = "Что-то пошло не так...";
 
 let form = document.getElementsByClassName('main-form')[0];
 	input = form.getElementsByTagName('input'),
+	form_close = document.querySelector('.popup-close');
 	statusMessage = document.createElement('div');
-	statusMessage.classList.add('plane');
+	statusMessage.classList.add('status');
 
 	form.addEventListener('submit', function (event) {
 		event.preventDefault();
@@ -208,9 +209,9 @@ let form = document.getElementsByClassName('main-form')[0];
 			} else if (request.readyState == 4){
 				if (request.status == 200 && request.status < 300) {
 					statusMessage.innerHTML = '';
-					statusMessage.style.height = '100px';
+					// statusMessage.style.height = '100px';
 					form.appendChild(statusMessage);
-					// statusMessage.innerHTML = message.success;
+					statusMessage.innerHTML = message.success;
 					// Добавляем контент на страницу
 				} else {
 					statusMessage.innerHTML = message.failure;
@@ -221,6 +222,10 @@ let form = document.getElementsByClassName('main-form')[0];
 			input[i].value = '';
 			// Очищаем поля ввода
 		}
+	});
+
+	form_close.addEventListener('click', function() {
+		form.removeChild(statusMessage);
 	});
 
 }

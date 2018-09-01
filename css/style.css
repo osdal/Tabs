@@ -734,9 +734,18 @@ header ul li:before {
   box-shadow: 0 0 10px #c78030;
 }
 
-  .status {
-  color: #dbf557;
-}
+ .status {
+ color: #dbf557;
+ background-color: #c78030;
+ color: red;
+ height: 65px !important;
+ margin-top: 5px;
+ padding: 15px;
+ font-size: 25px;
+ font-weight: 900;
+ text-shadow: 1px 1px 2px black;
+ text-align: center;
+ }
 
 .plane {
   background-image: url("../img/air-freight.png");
