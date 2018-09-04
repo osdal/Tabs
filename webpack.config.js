@@ -15,9 +15,9 @@ let conf = {
 				loader: 'babel-loader'
 			}
 		]
-	},
-	watch: true,
-	devtool: 'cheap-eval-source-map'
+	}
+	// watch: true,
+	// devtool: 'cheap-eval-source-map'
 
 }
 
